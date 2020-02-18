@@ -1,0 +1,18 @@
+Package: bankr
+Title: Bank Stuff
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Arber",
+           family = "Qoku",
+           role = c("aut", "cre"),
+           email = "arber.qoku@example.com",
+           comment = c(ORCID = "LMU"))
+Description: Bank stuff in detail.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 2.1.0)
+Imports:  
+    R6, checkmate  
+RoxygenNote: 7.0.2
