@@ -1,0 +1,46 @@
+## R6
+
+Bearbeiten Sie die folgenden aus Wickhams's [*Advanced R*](https://adv-r.hadley.nz/r6.html) adaptierten 
+Aufgaben/Fragen:
+
+
+## Kartenspiel
+
+Implementieren Sie eine `R6`-Klasse die einen (gemischten) Kartenstapel bayrischer^[also: Farben "Gras", "Herz", "Eichel", "Schell" und Kartenwerte 6 - 10, Unter, Ober, König, Ass] (!!) Karten 
+
+repräsentiert, mit Methoden um
+
+- eine bestimmte Anzahl Karten zufällig aus dem Stapel zu ziehen
+- den Stapel wieder aufzufüllen und neu zu mischen
+- den Stapel abzuheben
+
+Was wäre hier wesentlich anders/komplizierter wenn Sie diese Klasse und Methoden 
+mit S3 oder S4 implementieren würden?
+
+Hinweis
+```r
+farbe <- c("G", "H", "E", "S")
+wert <- c(6:10, "U", "O", "K", "A")
+cards <- paste0(rep(farbe, each = 9), rep(wert, times = 4))
+```
+
+## Bankkonto 
+
+Schreiben Sie für die folgende Aufgabe ein kleines, vollständig dokumentiertes und getestetes R-paket `bankr`.
+
+i) Implementieren Sie eine `R6`-Klasse `Account`, die ein Bankkonto abbildet: 
+ - mit den nötigen Feldern `balance` und `account_holder`, 
+ - auf das Geld eingezahlt (`$deposit()`) werden kann,
+ - von dem Geld abgehoben werden kann (`$withdraw()`). 
+
+ii) Implementieren Sie eine Unterklasse `GiroAccount` die ein Überziehungslimit `overdraft_max` hat und
+  - für negativen Kontostand Überziehungsgebühren abzieht, in Höhe eines bestimmte Prozentsatz `overdraft_fee_rate` des negativen Kontostands
+  - eine Fehlermeldung erzeugt wenn eine versuchte Abhebung von dem Konto dazu führen würden dass das Überziehungslimit überschritten wird
+
+iii) Implementieren Sie eine neue `R6`-Klasse `SafeAccount` die den Kontostand als `private`-Field implementiert und die Funktionalität von `$deposit()` und `$withdraw()` statt wie bisher nur mit `public`-Methoden jetzt über eine `active binding` zur `balance` repräsentiert. Welche Vorteile hat es `balance` als `active binding` zu einem `private` Feld statt als `public` Feld zu implementieren?
+
+iv) Stellen Sie sich vor Sie implementierten eine Klasse `R6`-Klasse `TransactionLog` die die Transaktionshistorie (Einzahlungen/Überweisungen/Überweisungsversuche) eines Kontos repräsentiert. Jeder `SafeAccount` habe ein solches 
+`TransactionLog` als zusätzliches (`private`) Feld.  
+Wenn Sie das täten, warum wäre es evtl. sinnnvoll die Standard `clone`-Methode von `SafeAccount` zu verändern?  
+*Bonus*: Implementieren Sie das.
+
