@@ -1,0 +1,18 @@
+## Lektüre: R6
+
+Lesen Sie das [`R6`](https://adv-r.hadley.nz/r6.html) Kapitel aus Wickhams's *Advanced R*.
+
+
+## Lektüre: S3 vs S4 vs R6
+
+Lesen Sie das [`Trade-Offs`](https://adv-r.hadley.nz/oo-tradeoffs.html) Kapitel aus Wickhams's *Advanced R*.
+
+## Videolecture
+
+Schauen Sie sich Winston Chang's Präsentation über die Implementation des R6 Systems an --
+der relevante Teil beginnt ca. bei 12:30 und endet bei ca. 15:00:
+
+<iframe src="https://channel9.msdn.com/Events/useR-international-R-User-conferences/useR-International-R-User-2017-Conference/The-R6-Class-System/player" width="960" height="540" allowFullScreen frameBorder="0" title="The R6 Class System - Microsoft Channel 9 Video"></iframe>
+
+Schauen Sie sich die entsprechenden Diagramme für Klassen mit `private`-Feldern/-Methoden und Elternklassen 
+[hier](https://github.com/r-lib/R6/blob/master/doc_extra/R6.pdf) an.

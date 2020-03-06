@@ -1,0 +1,26 @@
+```{r, child = "r6-ex.Rmd"}
+```
+
+----------------------------------------------------
+
+### Lösung:
+
+*Kartenspiel*
+
+Zum Beispiel so:
+```{r, cards_def, code = readLines("r6-cards-def.R"), echo = TRUE}
+```
+
+Was hier mit S3/S4 besonders schwierig wäre ist vor allem die Funktionalität 
+"Karten ziehen" -- wir müssten gleichzeitig das Objekt "Kartenstapel" 
+verändern *und* die gezogenen Karten als Rückgabewert ausgeben. Das geht ohne 
+große Verrenkungen nur mit *mutable objects* wie eben solchen R6 Klassen.
+
+*Bankkonto*
+
+S. `bankr`-Code.
+
+Zu iv.:  
+Wenn die Klasse selbst als Feld wieder Objekte aus anderen R6-Klassen enthält muss
+man wegen der *reference semantics* beim Kopieren solcher Klassenobjekte sehr vorsichtig sein --
+Stichwort *deep clones* und *shallow copies* -- vgl. auch `bankr/tests/testthat/test-safe-account.R` und die Erläuterungen im Code zu `SafeAccount$clone2()`.
